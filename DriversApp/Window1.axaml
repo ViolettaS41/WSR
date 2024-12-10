@@ -1,0 +1,87 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="820" d:DesignHeight="455"
+        x:Class="DriversApp.Window1"
+        Title="Window1">
+	<StackPanel>
+		<TextBlock HorizontalAlignment="Center"
+				   Margin="20"
+				   FontSize="25">Внести данные о водителе</TextBlock>
+		<Grid Margin="5" RowDefinitions="Auto,Auto,Auto,Auto, auto,auto" ColumnDefinitions="Auto, auto,auto,auto,auto, auto, auto, auto,auto,auto,auto,auto,auto" HorizontalAlignment="Center">
+			<TextBlock Grid.Column="0" Grid.Row="0">ID</TextBlock>
+			<TextBox Grid.Column="0" Grid.Row="1" Margin="5"></TextBox>
+			
+			<TextBlock Grid.Column="1" Grid.Row="0">Фамилия</TextBlock>
+			<TextBox Grid.Column="1" Grid.Row="1" Margin="5" Name="lastName"></TextBox>
+			
+			<TextBlock Grid.Column="2" Grid.Row="0">Имя</TextBlock>
+			<TextBox Grid.Column="2" Grid.Row="1" Margin="5" Name="Name"></TextBox>
+			
+			<TextBlock Grid.Column="3" Grid.Row="0">Отчество</TextBlock>
+			<TextBox Grid.Column="3" Grid.Row="1" Margin="5" Name="midlename"></TextBox>
+			
+			<TextBlock Grid.Column="4" Grid.Row="0">Паспорт(серия и номер)</TextBlock>
+			<TextBox Grid.Column="4" Grid.Row="1" Margin="5" Name="pasport"></TextBox>
+			
+			<TextBlock Grid.Column="5" Grid.Row="0">Адрес региcтрации</TextBlock>
+			<TextBox Grid.Column="5" Grid.Row="1" Margin="5" Name="Adress"></TextBox>
+			<Popup Name="AdressPopup" 
+				   Placement="Bottom" 
+				   IsOpen="False"
+				   Grid.Column="5"
+				   Grid.Row="1">
+				<ListBox Name="AdressListBox" 
+						 SelectionChanged="OnSuddestionSelected"
+						 Grid.Column="5"
+				   Grid.Row="1">
+				</ListBox>
+			</Popup>
+			
+			<TextBlock Grid.Column="0" Grid.Row="2">Адрес проживания</TextBlock>
+			<TextBox Grid.Column="0" Grid.Row="3" Margin="5" Name="AdressFact" TextChanged="OnTextChanged"></TextBox>
+			<Popup Name="AdressFactPopup"
+				   Placement="Bottom"
+				   IsOpen="False"
+				   Grid.Column="0"
+				   Grid.Row="3">
+				<ListBox Name="AdressFactListBox"
+						 SelectionChanged="OnSuddestionSelected1"
+						 Grid.Column="0"
+				   Grid.Row="3">
+				</ListBox>
+			</Popup>
+			
+			<TextBlock Grid.Column="1" Grid.Row="2">Место работы</TextBlock>
+			<TextBox Grid.Column="1" Grid.Row="3" Margin="5" Name="work"></TextBox>
+			
+			<TextBlock Grid.Column="2" Grid.Row="2">Должность</TextBlock>
+			<TextBox Grid.Column="2" Grid.Row="3" Margin="5" Name="eploy"></TextBox>
+			
+			<TextBlock Grid.Column="3" Grid.Row="2">Мобильный телефон</TextBlock>
+			<TextBox Grid.Column="3" Grid.Row="3" Margin="5" Name="phone"></TextBox>
+			
+			<TextBlock Grid.Column="4" Grid.Row="2">Email</TextBlock>
+			<TextBox Grid.Column="4" Grid.Row="3" Margin="5" Name="Email"></TextBox>
+			
+			<TextBlock Grid.Column="5" Grid.Row="2">Фотогрaфия</TextBlock>
+			<Button Grid.Column="5" Grid.Row="3"
+					Margin="5"> Добавить фото</Button>
+	
+			
+			<TextBlock Grid.Column="0" Grid.Row="4">Замечания</TextBlock>
+			<TextBox Grid.Column="0" Grid.Row="5" Margin="5" Name="note" Padding="40"></TextBox>
+		</Grid>
+		<TextBlock Name="ErrorText" 
+				   VerticalAlignment="Bottom" 
+				   HorizontalAlignment="Right"
+				   Margin="10"
+				   Padding="10"></TextBlock>
+		<Button Margin="10" 
+				Padding="15" 
+				VerticalAlignment="Bottom" 
+				HorizontalAlignment="Right"
+				Click="ValidEmail">Добавить водителя</Button>
+	</StackPanel>
+</Window>
